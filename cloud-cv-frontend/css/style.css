@@ -1,0 +1,143 @@
+/* ================= GLOBAL STYLES ================= */
+/* Applies to the entire website */
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Change font here */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8; /* Background colour */
+    color: #333; /* Text colour */
+}
+
+/* ================= NAVIGATION ================= */
+
+nav {
+    background-color: #0a1f44; /* Dark blue background */
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none; /* Remove bullets */
+    display: flex; /* Horizontal layout */
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white; /* Link colour */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ================= MAIN CONTENT ================= */
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.content-box {
+    background-color: white;
+    padding: 30px;
+    max-width: 800px;
+    width: 100%;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Soft shadow */
+}
+
+/* ================= HEADINGS ================= */
+
+h1 {
+    color: #0a1f44; /* Heading colour */
+}
+
+h2, h3 {
+    color: #1f3c88;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0a1f44;
+    color: white;
+}
+
+/* ================= IMAGE GALLERY ================= */
+
+/* Container for the entire gallery section */
+.gallery-container {
+    margin-top: 40px;
+}
+
+/* Horizontal scrolling row */
+.gallery {
+    display: flex;                 /* Align images in a row */
+    gap: 20px;                     /* Space between images */
+    overflow-x: auto;              /* Enable horizontal scrolling */
+    padding-bottom: 10px;
+}
+
+/* Individual images */
+.gallery img {
+    height: 200px;                 /* Controls image size */
+    border-radius: 8px;            /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    flex-shrink: 0;                /* Prevent images from shrinking */
+}
+
+/* Optional: hover effect */
+.gallery img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* ================= DOWNLOAD CV BUTTON ================= */
+
+.cv-download {
+    margin-top: 25px;
+}
+
+/* Button styling */
+.cv-download a {
+    display: inline-block;
+    background-color: #1f3c88;   /* Button colour */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.cv-download a:hover {
+    background-color: #0a1f44;
+}
+
+/* ================= CERTIFICATION PDF BUTTON ================= */
+
+.cert-link {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #1f3c88;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.cert-link:hover {
+    background-color: #0a1f44;
+}
