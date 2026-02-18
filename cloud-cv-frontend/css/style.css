@@ -1,143 +1,229 @@
-/* ================= GLOBAL STYLES ================= */
-/* Applies to the entire website */
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    font-family: Arial, Helvetica, sans-serif; /* Change font here */
-    margin: 0;
-    padding: 0;
-    background-color: #f4f6f8; /* Background colour */
-    color: #333; /* Text colour */
-}
-
-/* ================= NAVIGATION ================= */
-
-nav {
-    background-color: #0a1f44; /* Dark blue background */
-    padding: 10px;
-}
-
-nav ul {
-    list-style: none; /* Remove bullets */
-    display: flex; /* Horizontal layout */
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white; /* Link colour */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* ================= MAIN CONTENT ================= */
-
-main {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
     display: flex;
-    justify-content: center;
-    padding: 40px;
+    min-height: 100vh;
+    color: #333;
+
+    background-image: url("../assets/leadership/IMG_8211.jpeg");
+
+    /* Zoom in vertically */
+    background-size: 100% 200%;
+
+    /* Show top half */
+    background-position: top center;
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.content-box {
-    background-color: white;
-    padding: 30px;
-    max-width: 800px;
+
+/* ===============================
+   OVERLAY FOR FADED EFFECT
+=============================== */
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Soft shadow */
+    height: 150%;
+
+    /* White overlay with transparency */
+    background: rgba(255, 255, 255, 0.90);
+
+    /* Places overlay above image but below content */
+    z-index: -1;
 }
 
-/* ================= HEADINGS ================= */
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #0a1f44, #1f3c88);
+    color: white;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 14px;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.sidebar a:hover {
+    padding-left: 8px;
+    opacity: 0.8;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    margin-left: 260px;
+    padding: 60px 80px;
+    flex: 1;
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 h1 {
-    color: #0a1f44; /* Heading colour */
+    font-size: 34px;
+    margin-bottom: 15px;
 }
 
-h2, h3 {
-    color: #1f3c88;
-}
-
-/* ================= FOOTER ================= */
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #0a1f44;
-    color: white;
-}
-
-/* ================= IMAGE GALLERY ================= */
-
-/* Container for the entire gallery section */
-.gallery-container {
+h2 {
     margin-top: 40px;
+    margin-bottom: 15px;
+    font-size: 22px;
+    position: relative;
 }
 
-/* Horizontal scrolling row */
+h2::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    background: #1f3c88;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+}
+
+p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skill-tag {
+    display: inline-block;
+    background: #1f3c88;
+    color: white;
+    padding: 6px 14px;
+    margin: 6px 6px 6px 0;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.button {
+    display: inline-block;
+    padding: 12px 22px;
+    background: #1f3c88;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    margin-top: 15px;
+}
+
+.button:hover {
+    background: #0a1f44;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
 .gallery {
-    display: flex;                 /* Align images in a row */
-    gap: 20px;                     /* Space between images */
-    overflow-x: auto;              /* Enable horizontal scrolling */
-    padding-bottom: 10px;
-}
-
-/* Individual images */
-.gallery img {
-    height: 200px;                 /* Controls image size */
-    border-radius: 8px;            /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    flex-shrink: 0;                /* Prevent images from shrinking */
-}
-
-/* Optional: hover effect */
-.gallery img:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-}
-
-/* ================= DOWNLOAD CV BUTTON ================= */
-
-.cv-download {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
     margin-top: 25px;
 }
 
-/* Button styling */
-.cv-download a {
-    display: inline-block;
-    background-color: #1f3c88;   /* Button colour */
-    color: white;
-    padding: 12px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
+.gallery img {
+    height: 200px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
 }
 
-/* Hover effect */
-.cv-download a:hover {
-    background-color: #0a1f44;
+.gallery img:hover {
+    transform: scale(1.05);
 }
 
-/* ================= CERTIFICATION PDF BUTTON ================= */
+/* =========================
+   RESPONSIVE
+========================= */
 
-.cert-link {
-    display: inline-block;
-    margin-top: 10px;
-    background-color: #1f3c88;
-    color: white;
-    padding: 8px 14px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 14px;
-}
+@media (max-width: 900px) {
 
-.cert-link:hover {
-    background-color: #0a1f44;
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 40px 25px;
+    }
 }
